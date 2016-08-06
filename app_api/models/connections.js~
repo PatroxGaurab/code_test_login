@@ -1,0 +1,15 @@
+var mongoose = require( 'mongoose' );
+
+var connectionSchema = new mongoose.Schema({
+  user_id: {
+    type: mongoose.schema.types.objectid,
+    unique: true,
+    required: true
+  },
+  connections: [
+    mongoose.schema.types.objectid
+  ]
+});
+
+
+mongoose.model('Connection', connectionSchema);
